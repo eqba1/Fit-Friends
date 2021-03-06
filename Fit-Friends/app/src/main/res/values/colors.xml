@@ -2,8 +2,13 @@
 <resources>
     <color name="colorPrimary_1">#1D2939</color>
     <color name="colorPrimary_2">#333C4B</color>
-    <color name="colorAccent">#673AB7</color>
-    <color name="grey">#d3d3d3</color>
+    <color name="colorAccent">#6E0EFF</color>
+    <color name="colorBtn">#F4511E</color>
+    <color name="grey">#828282</color>
+    <color name="WhiteGrey">#eeeeee</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <color name="login_box">#1a333C4B</color>
+
 </resources>
