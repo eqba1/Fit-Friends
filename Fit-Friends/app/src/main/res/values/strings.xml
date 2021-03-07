@@ -3,7 +3,7 @@
     <string name="splashScreenTextView">توسعه یافته توسط تیم برنامه نویسی سین</string>
     <string name="input_username">نام کاربری</string>
     <string name="input_password">رمز ورود</string>
-    <string name="login_btn"> ورود به سامانه</string>
+    <string name="login_btn"> ورود</string>
     <string name="remember_me">مرا به خاطر بسپار</string>
     <string name="login_text">برای ورود به برنامه نام کاربری و رمز عبور خود را وارد کنید.</string>
 </resources>
