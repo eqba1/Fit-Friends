@@ -6,4 +6,5 @@
     <string name="login_btn"> ورود</string>
     <string name="remember_me">مرا به خاطر بسپار</string>
     <string name="login_text">برای ورود به برنامه نام کاربری و رمز عبور خود را وارد کنید.</string>
+    <string name="tmp_dashboard_text">به صفحه اصلی خوش آمدید</string>
 </resources>
