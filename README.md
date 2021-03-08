@@ -14,10 +14,34 @@ if you want check and develop the source code
 ```bash
 $ git clone https://github.com/eqba1/Fit-Friends.git
 ```
+
 - **step 4**: open the Android Studio and find the directory of project.
 - **step 5**: open the Project.
-- **step 5**: enjoy!
+- **step 5**: run ,enjoy!
 
+**issue**: CRASH Application in Initaial Running
+
+**fix**: comment out AppDatabase `onCreate()` method body.
+```kotlin
+    override fun onCreate(sqLite: SQLiteDatabase?) {
+        /* add this line
+        // creates account table if not exist
+        // executes SQL commands
+        // we put "!!" because sqLite it's nullable
+        sqLite!!.execSQL("CREATE TABLE IF NOT EXISTS $ACCOUNT_TABLE (" +
+                "$ACCOUNT_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$ACCOUNT_USERNAME VARCHAR(20) NOT NULL, " +
+                "$ACCOUNT_PASSWORD TEXT NOT NULL, " +
+                "$ACCOUNT_REGISTER_DATE VARCHAR(10))")
+         .
+         .
+         .
+                "FOREIGN KEY($TRAINER_ACCOUNT_ID) REFERENCES $ACCOUNT_TABLE($ACCOUNT_ID), " +
+                "FOREIGN KEY($TRAINER_PERSON_ID) REFERENCES $PERSON_TABLE($PERSON_ID))")
+         */// end comment
+    }
+             
+```
 feel free of Developing and Contributing
 
 ## User's Part
@@ -25,7 +49,7 @@ feel free of Developing and Contributing
 download apk file from website and enjoy it :)
 
 ## Licence
-Copyright 2021
+Copyright (c) 2021
 
 
 
