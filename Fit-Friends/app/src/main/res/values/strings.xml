@@ -7,4 +7,7 @@
     <string name="remember_me">مرا به خاطر بسپار</string>
     <string name="login_text">برای ورود به برنامه نام کاربری و رمز عبور خود را وارد کنید.</string>
     <string name="tmp_dashboard_text">به صفحه اصلی خوش آمدید</string>
+    <string name="logout_message">آیا مایل به خروج از برنامه هستید؟</string>
+    <string name="dismiss">خیر</string>
+    <string name="accept">بلی</string>
 </resources>
