@@ -5,12 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
-<<<<<<< Updated upstream
     android:textDirection="rtl"
-    tools:context=".ui.activities.LoginActivity">
-=======
     tools:context=".ui.activities.login.LoginActivity">
->>>>>>> Stashed changes
 
     <ImageView
         android:id="@+id/rectangle_bg"
@@ -149,12 +145,8 @@
         android:layout_height="24dp"
         android:layout_marginEnd="68dp"
         android:checked="false"
-<<<<<<< Updated upstream
         android:text="Remember me"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-=======
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
->>>>>>> Stashed changes
         app:layout_constraintEnd_toEndOf="@+id/rectangle_bg"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         app:layout_constraintVertical_bias="0.562" />
