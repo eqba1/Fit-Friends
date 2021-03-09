@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.android.fit_friends.R
+import com.example.android.fit_friends.ui.activities.login.LoginActivity
 import java.util.*
 
 // class splashActivity to show a splash screen for 4 seconds

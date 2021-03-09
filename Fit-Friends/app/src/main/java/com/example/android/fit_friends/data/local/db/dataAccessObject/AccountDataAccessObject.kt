@@ -3,11 +3,13 @@ package com.example.android.fit_friends.data.local.db.dataAccessObject
 import android.content.ContentValues
 import com.example.android.fit_friends.data.local.db.AppDatabase
 import com.example.android.fit_friends.data.model.Account
+import java.util.ArrayList
 
 // we need one dataAccessObject class for each data model class
 // this classes show the access of each data model to the methods
 // data access object package accesses data directly
-class AccountDataAccessObject(appDatabase: AppDatabase) : BaseDataAccessObject<Account>(appDatabase) {
+class AccountDataAccessObject(appDatabase: AppDatabase) :
+    BaseDataAccessObject<Account>(appDatabase) {
 
     // for each method we must do three things:
     // 1. open data base
@@ -39,11 +41,67 @@ class AccountDataAccessObject(appDatabase: AppDatabase) : BaseDataAccessObject<A
     }
 
     override fun findAll(): List<Account> {
-        TODO("Not yet implemented")
+
+        // we want to get data, so it's readable
+        val db = appDatabase.readableDatabase
+
+        query = "SELECT * FROM " + AppDatabase.ACCOUNT_TABLE
+
+        // this helps us write "select" command as SQL query
+        val cursor = db.rawQuery(query, null)
+
+        data.clear()
+
+        // if there is at least one row in the table
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_ID))
+                val userName = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_USERNAME))
+                val password = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_PASSWORD))
+                val registerDate =
+                    cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_REGISTER_DATE))
+
+                data.add(Account(id.toLong(), userName, password, registerDate))
+
+            } while (cursor.moveToNext()) // if the next row exists
+        }
+
+        cursor.close()
+        db.close()
+
+        return data
     }
 
     override fun find(columnName: String, columnValue: String): List<Account> {
-        TODO("Not yet implemented")
+
+        // we want to get data, so it's readable
+        val db = appDatabase.readableDatabase
+
+        query = "SELECT * FROM " + AppDatabase.ACCOUNT_TABLE + " WHERE $columnName = ?"
+
+        // this helps us write "select" command as SQL query
+        val cursor = db.rawQuery(query, arrayOf(columnValue))
+
+        data.clear()
+
+        // if there is at least one row in the table
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_ID))
+                val userName = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_USERNAME))
+                val password = cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_PASSWORD))
+                val registerDate =
+                    cursor.getString(cursor.getColumnIndex(AppDatabase.ACCOUNT_REGISTER_DATE))
+
+                data.add(Account(id.toLong(), userName, password, registerDate))
+
+            } while (cursor.moveToNext()) // if the next row exists
+        }
+
+        cursor.close()
+        db.close()
+
+        return data
     }
 
     override fun delete(id: String): Boolean {

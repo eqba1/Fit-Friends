@@ -5,8 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_login"
+<<<<<<< Updated upstream
     android:textDirection="rtl"
     tools:context=".ui.activities.LoginActivity">
+=======
+    tools:context=".ui.activities.login.LoginActivity">
+>>>>>>> Stashed changes
 
     <ImageView
         android:id="@+id/rectangle_bg"
@@ -61,13 +65,13 @@
         android:id="@+id/username_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="260dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/nazli"
         android:text="@string/input_username"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/username"
+        app:layout_constraintBottom_toTopOf="@id/usernameEditText"
         app:layout_constraintEnd_toEndOf="@id/rectangle_bg"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="@id/rectangle_bg"
@@ -75,7 +79,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/usernameEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -100,23 +104,23 @@
         android:id="@+id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="260dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/nazli"
         android:text="@string/input_password"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/password"
+        app:layout_constraintBottom_toTopOf="@id/passwordEditText"
         app:layout_constraintEnd_toEndOf="@id/rectangle_bg"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="@id/rectangle_bg"
-        app:layout_constraintTop_toBottomOf="@id/username"
+        app:layout_constraintTop_toBottomOf="@id/usernameEditText"
         app:layout_constraintVertical_bias="0.0" />
 
 
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -136,7 +140,8 @@
         android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="@id/rectangle_bg"
         app:layout_constraintStart_toStartOf="@id/rectangle_bg"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameEditText"
+        />
 
     <CheckBox
         android:id="@+id/checkedTextView"
@@ -144,10 +149,14 @@
         android:layout_height="24dp"
         android:layout_marginEnd="68dp"
         android:checked="false"
+<<<<<<< Updated upstream
         android:text="Remember me"
         app:layout_constraintBottom_toTopOf="@+id/login_button"
+=======
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+>>>>>>> Stashed changes
         app:layout_constraintEnd_toEndOf="@+id/rectangle_bg"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         app:layout_constraintVertical_bias="0.562" />
 
     <TextView
@@ -158,13 +167,13 @@
         android:fontFamily="@font/nazli"
         android:text="@string/remember_me"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toStartOf="@+id/checkedTextView"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
         app:layout_constraintVertical_bias="0.631" />
 
     <Button
-        android:id="@+id/login_button"
+        android:id="@+id/loginButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -180,7 +189,7 @@
         app:layout_constraintEnd_toEndOf="@id/rectangle_bg"
         app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="@id/rectangle_bg"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
